@@ -1,7 +1,132 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21D5B75C-B8B2-4368-B800-0FD499179144}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>retailPartnerFile</RootNamespace>
+    <AssemblyName>retailPartnerFile</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acao.cs" />
+    <Compile Include="Dominio\Parceiro.cs" />
+    <Compile Include="Dominio\ParceiroExportacao.cs" />
+    <Compile Include="Dominio\ParceiroImportacao.cs" />
+    <Compile Include="Dominio\ParceiroTransformacao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="xslt\store2\fileWithDiscount\" />
+    <Folder Include="xslt\store2\fileWithoutDiscount\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xslt\classificacao.xsl" />
+    <Content Include="xslt\images.xsl" />
+    <Content Include="xslt\store1\adidas.xsl" />
+    <Content Include="xslt\store1\boaspromocoes.xsl" />
+    <Content Include="xslt\store1\buscape.xsl" />
+    <Content Include="xslt\store1\buscapedesconto.xsl" />
+    <Content Include="xslt\store1\bymk.xsl" />
+    <Content Include="xslt\store1\centralbrasileirao.xsl" />
+    <Content Include="xslt\store1\clickaporter.xsl" />
+    <Content Include="xslt\store1\compraunica.xslt" />
+    <Content Include="xslt\store1\confieaqui.xsl" />
+    <Content Include="xslt\store1\criteo.xsl" />
+    <Content Include="xslt\store1\educacaofisica.xsl" />
+    <Content Include="xslt\store1\euamopromocao.xsl" />
+    <Content Include="xslt\store1\eucomparo.xsl" />
+    <Content Include="xslt\store1\googleshop.xsl" />
+    <Content Include="xslt\store1\iconna.xsl" />
+    <Content Include="xslt\store1\jacotei.xsl" />
+    <Content Include="xslt\store1\kelkoo.xsl" />
+    <Content Include="xslt\store1\kuantokusta.xsl" />
+    <Content Include="xslt\store1\mercadomineiro.xslt" />
+    <Content Include="xslt\store1\mercadovirtual.xsl" />
+    <Content Include="xslt\store1\mucca.xsl" />
+    <Content Include="xslt\store1\nike.xsl" />
+    <Content Include="xslt\store1\pescapreco.xsl" />
+    <Content Include="xslt\store1\shoppydoo.xsl" />
+    <Content Include="xslt\store1\sproolofertas.xsl" />
+    <Content Include="xslt\store1\terra.xsl" />
+    <Content Include="xslt\store1\tudocupom.xsl" />
+    <Content Include="xslt\store1\uol.xsl" />
+    <Content Include="xslt\store1\uoldesconto.xsl" />
+    <Content Include="xslt\store1\webdescontos.xsl" />
+    <Content Include="xslt\store1\xsl.txt" />
+    <Content Include="xslt\store1\yeahdesconto.xsl" />
+    <Content Include="xslt\store1\zoom.xsl" />
+    <Content Include="xslt\store1\zura.xsl" />
+    <Content Include="xslt\store2\adidas.xsl" />
+    <Content Include="xslt\store2\boaspromocoes.xsl" />
+    <Content Include="xslt\store2\buscape.xsl" />
+    <Content Include="xslt\store2\buscapedesconto.xsl" />
+    <Content Include="xslt\store2\bymk.xsl" />
+    <Content Include="xslt\store2\centralbrasileirao.xsl" />
+    <Content Include="xslt\store2\clickaporter.xsl" />
+    <Content Include="xslt\store2\compraunica.xslt" />
+    <Content Include="xslt\store2\confieaqui.xsl" />
+    <Content Include="xslt\store2\criteo.xsl" />
+    <Content Include="xslt\store2\educacaofisica.xsl" />
+    <Content Include="xslt\store2\euamopromocao.xsl" />
+    <Content Include="xslt\store2\eucomparo.xsl" />
+    <Content Include="xslt\store2\googleshop.xsl" />
+    <Content Include="xslt\store2\iconna.xsl" />
+    <Content Include="xslt\store2\jacotei.xsl" />
+    <Content Include="xslt\store2\kelkoo.xsl" />
+    <Content Include="xslt\store2\kuantokusta.xsl" />
+    <Content Include="xslt\store2\mercadomineiro.xslt" />
+    <Content Include="xslt\store2\mercadovirtual.xsl" />
+    <Content Include="xslt\store2\mucca.xsl" />
+    <Content Include="xslt\store2\nike.xsl" />
+    <Content Include="xslt\store2\pescapreco.xsl" />
+    <Content Include="xslt\store2\shoppydoo.xsl" />
+    <Content Include="xslt\store2\sproolofertas.xsl" />
+    <Content Include="xslt\store2\terra.xsl" />
+    <Content Include="xslt\store2\tudocupom.xsl" />
+    <Content Include="xslt\store2\uol.xsl" />
+    <Content Include="xslt\store2\uoldesconto.xsl" />
+    <Content Include="xslt\store2\webdescontos.xsl" />
+    <Content Include="xslt\store2\yeahdesconto.xsl" />
+    <Content Include="xslt\store2\zoom.xsl" />
+    <Content Include="xslt\store2\zura.xsl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
