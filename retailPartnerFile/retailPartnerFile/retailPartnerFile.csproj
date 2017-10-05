@@ -45,6 +45,7 @@
     <Compile Include="Dominio\ParceiroImportacao.cs" />
     <Compile Include="Dominio\ParceiroTransformacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="xslt\store2\fileWithDiscount\" />
