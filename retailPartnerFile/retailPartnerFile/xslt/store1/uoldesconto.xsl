@@ -49,7 +49,7 @@
             <GRATIS><xsl:value-of select="isFreteGratis"/></GRATIS>
             <CONDICAO></CONDICAO>
           </FRETE>
-          <URL>http://www.centauro.com.br/promotion2.jsp;$urlparam$811mw2QFyKi2JljHqwxfpct1WOpCWB?page=pdp&amp;productId=<xsl:value-of select="codModelo"/>&amp;utm_source=UolDesconto&amp;utm_medium=cpc&amp;utm_campaign=INST_Institucional</URL>
+          <URL>http://www.lojista.com.br/promotion2.jsp;$urlparam$811mw2QFyKi2JljHqwxfpct1WOpCWB?page=pdp&amp;productId=<xsl:value-of select="codModelo"/>&amp;utm_source=UolDesconto&amp;utm_medium=cpc&amp;utm_campaign=INST_Institucional</URL>
           <IMAGEM><xsl:value-of select="linkImagem"/></IMAGEM>
           <DISPONIBILIDADE>1</DISPONIBILIDADE>
           <VARIAVEIS>

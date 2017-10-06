@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method='xml' indent='yes' version='1.0' encoding='UTF-8' standalone='yes' cdata-section-elements='descricao link_prod imagem categ'/> 
 	<xsl:template match="/">
-		<centauro>
+		<lojista>
 			<xsl:for-each select="catalogo/produto">
 			<produto>
 				 <descricao><xsl:value-of select="descricaoPDP"/></descricao>
@@ -15,6 +15,6 @@
 				 <parcel>ou <xsl:value-of select="numeroParcela"/>x <xsl:value-of select="valorParcela"/></parcel>
 			</produto>
 			</xsl:for-each>
-		</centauro>
+		</lojista>
 	</xsl:template>
 </xsl:stylesheet>

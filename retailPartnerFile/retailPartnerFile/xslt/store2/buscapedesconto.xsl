@@ -39,7 +39,7 @@
             <GRATIS><xsl:value-of select="free_ship"/></GRATIS>
             <CONDICAO></CONDICAO>
           </FRETE>
-          <URL>http://www.centauro.com.br/promotion2.jsp;$urlparam$811mw2QFyKi2JljHqwxfpel1WOpCWA?page=pdp&amp;productId=<xsl:value-of select="id"/>&amp;utm_source=BuscapeDesconto&amp;utm_medium=cpc&amp;utm_campaign=INST_Institucional</URL>
+          <URL>http://www.lojista.com.br/promotion2.jsp;$urlparam$811mw2QFyKi2JljHqwxfpel1WOpCWA?page=pdp&amp;productId=<xsl:value-of select="id"/>&amp;utm_source=BuscapeDesconto&amp;utm_medium=cpc&amp;utm_campaign=INST_Institucional</URL>
           <IMAGEM><xsl:value-of select="image_link"/></IMAGEM>
           <DISPONIBILIDADE>1</DISPONIBILIDADE>
           <VARIAVEIS>

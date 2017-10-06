@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace retailPartnerFile
+namespace retailPartnerFile.Dominio
 {
     public enum Acao
     {

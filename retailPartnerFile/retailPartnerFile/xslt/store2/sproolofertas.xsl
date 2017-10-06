@@ -5,7 +5,7 @@
 		<loja>
 			<dataCriacao></dataCriacao>
 			<moeda>R$</moeda>
-			<nomeLoja><![CDATA[Centauro]]></nomeLoja>
+			<nomeLoja><![CDATA[lojista]]></nomeLoja>
 			<lista>
 				<xsl:for-each select="rss/channel/item">
 				<produto>

@@ -1,9 +1,12 @@
-﻿using System;
+﻿using retailPartnerFile.Helper;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 
 namespace retailPartnerFile.Dominio
 {
@@ -64,7 +67,7 @@ namespace retailPartnerFile.Dominio
                     }
                     try
                     {
-                        EmailHelper.EnviarEmail("EquipeErroEaiEcommerce@gruposbf.com.br", "EquipeErroEaiEcommerce@gruposbf.com.br", string.Format("Erro EAI - {0} - Parceiro - Exportacao FTP", System.Environment.MachineName), ex.ToString());
+                        EmailHelper.sendEmail("x@email.com", string.Format("Erro EAI - {0} - Parceiro - Exportacao FTP", System.Environment.MachineName), ex.ToString(), true, new List<KeyValuePair<string, string>>());
                     }
                     catch
                     {
@@ -114,7 +117,7 @@ namespace retailPartnerFile.Dominio
 
                 try
                 {
-                    dadosParceiroDataTable = OracleDatabaseHelper.ExecutarDataTable(query, parametros);
+                    dadosParceiroDataTable = DatabaseHelper.ExecutarDataTable(query, parametros);
 
                     foreach (DataRow linha in dadosParceiroDataTable.AsEnumerable())
                     {
@@ -212,7 +215,7 @@ namespace retailPartnerFile.Dominio
                     }
                     try
                     {
-                        EmailHelper.EnviarEmail("EquipeErroEaiEcommerce@gruposbf.com.br", "EquipeErroEaiEcommerce@gruposbf.com.br", string.Format("Erro EAI - {0} - Parceiro - Exportação", System.Environment.MachineName), ex.ToString());
+                        EmailHelper.sendEmail("x@teste.com.br", string.Format("Erro EAI - {0} - Parceiro - Exportação", System.Environment.MachineName), ex.ToString(), true, new List<KeyValuePair<string, string>>());
                     }
                     catch
                     {
@@ -404,7 +407,7 @@ left join
                         string templateXslClassificacao = arquivoXslClassificacao.ReadToEnd();
                         XmlDocument xmlClassificacao = new XmlDocument();
 
-                        xmlClassificacao = GrupoSBF.Ecommerce.EAI.Infrastructure.OracleDatabaseHelper.ExecutarXmlReader(queryClassificacaoDeProduto, templateXslClassificacao);
+                        xmlClassificacao = DatabaseHelper.ExecutarXmlReader(queryClassificacaoDeProduto, templateXslClassificacao);
                         xmlClassificacao.Save(caminhoArquivoXmlClassificacao);
                     }
                 }
@@ -419,4 +422,5 @@ left join
                 return resultado;
             }
         }
+    }
 }

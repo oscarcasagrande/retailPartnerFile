@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
+using System.IO;
+using retailPartnerFile.Helper;
+using System.Diagnostics;
 
 namespace retailPartnerFile.Dominio
 {
@@ -163,7 +166,7 @@ namespace retailPartnerFile.Dominio
 
                     try
                     {
-                        EmailHelper.EnviarEmail("EquipeErroEaiEcommerce@gruposbf.com.br", "EquipeErroEaiEcommerce@gruposbf.com.br", string.Format("Erro EAI - {0} - Parceiro - Importação", System.Environment.MachineName), ex.ToString());
+                        EmailHelper.sendEmail("x@teste.com.br", string.Format("Erro EAI - {0} - Parceiro - Importação", System.Environment.MachineName), ex.ToString(), true, new List<KeyValuePair<string, string>>());
                     }
                     catch
                     {
@@ -247,7 +250,7 @@ namespace retailPartnerFile.Dominio
 
                     try
                     {
-                        EmailHelper.EnviarEmail("EquipeErroEaiEcommerce@gruposbf.com.br", "EquipeErroEaiEcommerce@gruposbf.com.br", string.Format("Erro EAI - {0} - Parceiro - Importação", System.Environment.MachineName), ex.ToString());
+                        EmailHelper.sendEmail("x@teste.com.br", string.Format("Erro EAI - {0} - Parceiro - Importação", System.Environment.MachineName), ex.ToString(), true, new List<KeyValuePair<string, string>>());
                     }
                     catch
                     {

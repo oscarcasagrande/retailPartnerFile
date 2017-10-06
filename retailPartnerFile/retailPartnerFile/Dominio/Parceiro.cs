@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using retailPartnerFile.Helper;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,7 +13,7 @@ namespace retailPartnerFile.Dominio
     public static partial class Parceiro
     {
 
-        const string CAMINHOREGISTRO = @"SOFTWARE\Grupo SBF\Ecommerce\EAI\Modulos\Parceiro";
+        const string CAMINHOREGISTRO = @"SOFTWARE\Grupo\Ecommerce\EAI\Modulos\Parceiro";
 
         #region ##################################### Estruturas ###########################################
 
@@ -392,9 +395,9 @@ namespace retailPartnerFile.Dominio
                     try
                     {
                         File.Move(arquivo, destino);
-                        var listaDeArquivos = GrupoSBF.Ecommerce.EAI.Infrastructure.CompressHelper.ObterListaDeArquivos(caminhoDestino, "*.xml", DateTime.Now.AddDays(-1), null);
-                        GrupoSBF.Ecommerce.EAI.Infrastructure.CompressHelper.Comprimir(listaDeArquivos);
-                        GrupoSBF.Ecommerce.EAI.Infrastructure.ExpurgoHelper.ExpurgarArquivos(caminhoDestino, "*.xml", DateTime.Now.AddDays(-1), null);
+                        var listaDeArquivos = CompressHelper.ObterListaDeArquivos(caminhoDestino, "*.xml", DateTime.Now.AddDays(-1), null);
+                        CompressHelper.Comprimir(listaDeArquivos);
+                        ExpurgoHelper.ExpurgarArquivos(caminhoDestino, "*.xml", DateTime.Now.AddDays(-1), null);
                         RegistrarTransferenciaDeArquivo(codigoHistoricoExecucaoProcesso, DateTime.Now, Direcao.Movido, Status.Sucesso, arquivo, destino, subpasta);
                     }
                     catch (Exception ex)
@@ -461,7 +464,7 @@ namespace retailPartnerFile.Dominio
 
             try
             {
-                int execucao = Infrastructure.OracleDatabaseHelper.ExecutarNonQuery(query, parametros);
+                int execucao = DatabaseHelper.ExecutarNonQuery(query, parametros);
                 resultado = execucao > -1 ? true : false;
             }
             catch (Exception ex)
@@ -608,13 +611,13 @@ namespace retailPartnerFile.Dominio
 
             try
             {
-                DataTable tabela = OracleDatabaseHelper.ExecutarDataTable(query, parametros);
+                DataTable tabela = DatabaseHelper.ExecutarDataTable(query, parametros);
 
                 if (tabela.Rows.Count == 0)
                 {
                     CriarNumeroProtocolo(codigoHistoricoExecucaoProcesso);
 
-                    tabela = OracleDatabaseHelper.ExecutarDataTable(query);
+                    tabela = DatabaseHelper.ExecutarDataTable(query);
                 }
 
                 resultado = Convert.ToInt32(tabela.Rows[0]["ID_PROTOCOLO"]);
@@ -640,7 +643,7 @@ namespace retailPartnerFile.Dominio
 
             try
             {
-                OracleDatabaseHelper.ExecutarNonQuery(query, parametros);
+                DatabaseHelper.ExecutarNonQuery(query, parametros);
             }
             catch (Exception ex)
             {
@@ -660,7 +663,7 @@ namespace retailPartnerFile.Dominio
 
             try
             {
-                OracleDatabaseHelper.ExecutarNonQuery(query, parametros);
+                DatabaseHelper.ExecutarNonQuery(query, parametros);
             }
             catch (Exception ex)
             {

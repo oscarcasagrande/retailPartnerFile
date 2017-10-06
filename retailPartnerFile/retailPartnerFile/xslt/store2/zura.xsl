@@ -1,7 +1,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method='xml' indent='yes' version='1.0' encoding='UTF-8' standalone='yes' cdata-section-elements='product_name link imgurl category category_id'/> 
 	<xsl:template match="/">
-		<centauro>
+		<lojista>
 			<xsl:for-each select="rss/channel/item">
 			<product>
 				<original_id><xsl:value-of select="id"/><xsl:value-of select="color_code"/></original_id>
@@ -18,6 +18,6 @@
 				<partValue><xsl:value-of select="amountPerInstallment"/></partValue>
 			</product>
 			</xsl:for-each>
-		</centauro>
+		</lojista>
 	</xsl:template>
 </xsl:stylesheet>

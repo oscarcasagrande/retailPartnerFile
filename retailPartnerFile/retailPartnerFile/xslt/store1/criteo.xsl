@@ -11,7 +11,7 @@
           </xsl:attribute>
           <name><xsl:value-of select="descricaoPDP"/></name>
           <smallimage><xsl:value-of select="linkImagem"/></smallimage>
-          <bigimage>http://images.centauro.com.br/900x900/<xsl:value-of select="codModelo"/><xsl:value-of select="codCor"/>.jpg</bigimage>
+          <bigimage>http://images.lojista.com.br/900x900/<xsl:value-of select="codModelo"/><xsl:value-of select="codCor"/>.jpg</bigimage>
           <producturl><xsl:value-of select="linkPDP" />?utm_source=Criteo&amp;utm_medium=xml&amp;utm_campaign=Criteo-<xsl:value-of select="grupo"/>-<xsl:value-of select="categoria"/>-<xsl:value-of select="marca"/>-<xsl:value-of select="codModelo"/>-<xsl:value-of select="codCor"/></producturl>
           <description><xsl:value-of select="descricaoPDP"/></description>
           <price><xsl:value-of select="precoPromocional"/></price>
