@@ -1,7 +1,7 @@
  O volume na unidade C n∆o tem nome.
  O N£mero de SÇrie do Volume Ç 1882-8C9C
 
- Pasta de C:\Projetos\EAI\ATG-EAI\ATG-EAI-MultiLoja\Modulos\Parceiro\ParceiroDomain\ParceiroDomain\XSLT\Bytennis
+ Pasta de C:\Projetos\EAI\ATG-EAI\ATG-EAI-MultiLoja\Modulos\Parceiro\ParceiroDomain\ParceiroDomain\XSLT\store1
 
 28/08/2012  14:58    <DIR>          .
 28/08/2012  14:58    <DIR>          ..

@@ -9,12 +9,24 @@
           <xsl:attribute name="id">
             <xsl:value-of select="id"/>
           </xsl:attribute>
-          <name><xsl:value-of select="title"/></name>
-          <smallimage><xsl:value-of select="image_link"/></smallimage>
-          <bigimage>http://images.lojista.com.br/900x900/<xsl:value-of select="id"/><xsl:value-of select="color_code"/>.jpg</bigimage>
-          <producturl><xsl:value-of select="link" />?utm_source=Criteo&amp;utm_medium=xml&amp;utm_campaign=Criteo-<xsl:value-of select="categoria"/>-<xsl:value-of select="subgroup"/>-<xsl:value-of select="brand"/>-<xsl:value-of select="id"/>-<xsl:value-of select="color_code"/></producturl>
-          <description><xsl:value-of select="title"/></description>
-          <price><xsl:value-of select="saleprice"/></price>
+          <name>
+            <xsl:value-of select="title"/>
+          </name>
+          <smallimage>
+            <xsl:value-of select="image_link"/>
+          </smallimage>
+          <bigimage>
+            http://images.lojista.com.br/900x900/<xsl:value-of select="id"/><xsl:value-of select="color_code"/>.jpg
+          </bigimage>
+          <producturl>
+            <xsl:value-of select="link" />?utm_source=Criteo&amp;utm_medium=xml&amp;utm_campaign=Criteo-<xsl:value-of select="categoria"/>-<xsl:value-of select="subgroup"/>-<xsl:value-of select="brand"/>-<xsl:value-of select="id"/>-<xsl:value-of select="color_code"/>
+          </producturl>
+          <description>
+            <xsl:value-of select="title"/>
+          </description>
+          <price>
+            <xsl:value-of select="saleprice"/>
+          </price>
           <recommendable>1</recommendable>
           <instock>1</instock>
         </product>

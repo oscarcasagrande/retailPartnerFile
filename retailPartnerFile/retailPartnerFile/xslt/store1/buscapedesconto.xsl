@@ -5,27 +5,50 @@
     <produtos>
       <xsl:for-each select="catalogo/produto[sku !='769822000000']">
         <PRODUTO>
-          <SKU><xsl:value-of select="codModelo"/><xsl:value-of select="codCor"/></SKU>
-          <NOME><xsl:value-of select="descricaoPDP"/></NOME>
-          <CATEGORIA><xsl:value-of select="grupo"/></CATEGORIA>
-          <SUBCATEGORIA><xsl:value-of select="categoria"/></SUBCATEGORIA>
+          <SKU>
+            <xsl:value-of select="codModelo"/>
+            <xsl:value-of select="codCor"/>
+          </SKU>
+          <NOME>
+            <xsl:value-of select="descricaoPDP"/>
+          </NOME>
+          <CATEGORIA>
+            <xsl:value-of select="grupo"/>
+          </CATEGORIA>
+          <SUBCATEGORIA>
+            <xsl:value-of select="categoria"/>
+          </SUBCATEGORIA>
           <PRECO>
-            <POR><xsl:value-of select="format-number(precoPromocional * 0.9, '###.00', 'real')"/></POR>
+            <POR>
+              <xsl:value-of select="format-number(precoPromocional * 0.9, '###.00', 'real')"/>
+            </POR>
           </PRECO>
           <PARCELAMENTO>
-          <N_PARCELAS><xsl:value-of select="numeroParcela"/></N_PARCELAS>
-          <V_PARCELAS><xsl:value-of select="format-number(valorParcela * 0.9, '###.00', 'real')"/></V_PARCELAS>
+            <N_PARCELAS>
+              <xsl:value-of select="numeroParcela"/>
+            </N_PARCELAS>
+            <V_PARCELAS>
+              <xsl:value-of select="format-number(valorParcela * 0.9, '###.00', 'real')"/>
+            </V_PARCELAS>
           </PARCELAMENTO>
           <FRETE>
-            <GRATIS><xsl:value-of select="isFreteGratis"/></GRATIS>
+            <GRATIS>
+              <xsl:value-of select="isFreteGratis"/>
+            </GRATIS>
             <CONDICAO></CONDICAO>
           </FRETE>
-          <URL><xsl:value-of select="linkPDP"/>&amp;cupomId=36acf476-4c1c-4c3a-b601-fb21bb0adc42&amp;utm_source=Buscape&amp;utm_medium=xml&amp;utm_campaign=Buscape-<xsl:value-of select="grupo"/>-<xsl:value-of select="categoria"/>-<xsl:value-of select="marca"/>-<xsl:value-of select="codModelo"/>-<xsl:value-of select="codCor"/></URL>
-          <IMAGEM><xsl:value-of select="linkImagem"/></IMAGEM>
+          <URL>
+            <xsl:value-of select="linkPDP"/>&amp;cupomId=36acf476-4c1c-4c3a-b601-fb21bb0adc42&amp;utm_source=Buscape&amp;utm_medium=xml&amp;utm_campaign=Buscape-<xsl:value-of select="grupo"/>-<xsl:value-of select="categoria"/>-<xsl:value-of select="marca"/>-<xsl:value-of select="codModelo"/>-<xsl:value-of select="codCor"/>
+          </URL>
+          <IMAGEM>
+            <xsl:value-of select="linkImagem"/>
+          </IMAGEM>
           <DISPONIBILIDADE>1</DISPONIBILIDADE>
           <VARIAVEIS>
             <VARIAVEL_A></VARIAVEL_A>
-            <VARIAVEL_B><xsl:value-of select="codCor"/>?utm_source=Buscape&amp;utm_medium=xml&amp;utm_campaign=Buscape-<xsl:value-of select="grupo"/>-<xsl:value-of select="categoria"/>-<xsl:value-of select="marca"/>-<xsl:value-of select="codModelo"/>-<xsl:value-of select="codCor"/></VARIAVEL_B>
+            <VARIAVEL_B>
+              <xsl:value-of select="codCor"/>?utm_source=Buscape&amp;utm_medium=xml&amp;utm_campaign=Buscape-<xsl:value-of select="grupo"/>-<xsl:value-of select="categoria"/>-<xsl:value-of select="marca"/>-<xsl:value-of select="codModelo"/>-<xsl:value-of select="codCor"/>
+            </VARIAVEL_B>
             <VARIAVEL_C></VARIAVEL_C>
             <VARIAVEL_D></VARIAVEL_D>
             <VARIAVEL_E></VARIAVEL_E>

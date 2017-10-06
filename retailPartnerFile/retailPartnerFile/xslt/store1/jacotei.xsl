@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:output method='xml' indent='yes' version='1.0' encoding='UTF-8' standalone='yes' cdata-section-elements='descricao link_prod imagem categ'/> 
-	<xsl:template match="/">
+  <xsl:output method='xml' indent='yes' version='1.0' encoding='UTF-8' standalone='yes' cdata-section-elements='descricao link_prod imagem categ'/>
+  <xsl:template match="/">
     <lojista>
       <xsl:for-each select="catalogo/produto">
         <produto>
@@ -30,5 +30,5 @@
         </produto>
       </xsl:for-each>
     </lojista>
-	</xsl:template>
+  </xsl:template>
 </xsl:stylesheet>
